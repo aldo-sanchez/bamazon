@@ -2,12 +2,7 @@ console.log('hello world!');
 var inquirer = require('inquirer');
 var Controller = require('./controller.js');
 
-// var myController = new Controller();
-
-var Question = function(promptQuestions, answers){
-  this.promptQuestions = promptQuestions;
-  this.answers = answers;
-};
+var myController = new Controller();
 
 var promptQuestions = [{
   type: 'input',
@@ -21,6 +16,6 @@ var promptQuestions = [{
 
 inquirer.prompt(promptQuestions).then((answer)=>{
   console.log(answer.id, answer.quantity);
-  var myController = new Controller(answer);
+  myController.answers = answer;
   myController.test();
 });
