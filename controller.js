@@ -1,19 +1,7 @@
-// var mysql = require('mysql');
 require('console.table')
-// var keyDB = require('./keys.js');
 
 var Search = require('./queryDB');
 var newSearch = new Search(); 
-
-// var questions = require('./bamazonCustomer.js')
-
-// // Setup connection to mysql db (bamazon_db);
-// var connection = mysql.createConnection(keyDB);
-
-// connection.connect((err)=>{
-//   if(err) throw err;
-//   // console.log('connected as id: ' + connection.threadId);
-// });
 
 function ControllerObject(answers){
   this.answers = answers
@@ -25,35 +13,11 @@ ControllerObject.prototype.analyzeAnswers = function(){
 };
 
 ControllerObject.prototype.displayOptions = function(promptQuestions){
-  console.log('im in for realz')
   array = ['products'];
   newSearch.getEntireTable(promptQuestions);
 }
 
 module.exports = ControllerObject;
-
-// function getEntireTable(callback){
-//   connection.query('SELECT * FROM ??', array, function(err, res){
-//     if(err) throw err;
-//     console.table(res)
-//     callback();
-//   });
-// }
-
-// function getItem(array, answers, callback){
-//   console.log(answers)
-//   connection.query('SELECT * FROM ?? WHERE item_id = ?', array, function(err,res){
-//     if(err) throw err;
-//     callback(answers,res);
-//   });
-// };
-
-// function updateTable(array){
-//   connection.query('UPDATE ?? SET ?? = ? WHERE item_id = ?', array, function(err,res){
-//     if(err) throw err;
-//     console.log(res);
-//   });
-// };
 
 function reduceQuantity(answers, res){
     console.table(res);

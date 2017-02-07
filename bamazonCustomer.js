@@ -7,7 +7,6 @@ var myController = new Controller();
 myController.displayOptions(promptQuestions)
 
 function promptQuestions(){
-  console.log('the promptssss')
   var questions = [{
     type: 'input',
     name: 'id',
